@@ -1,0 +1,59 @@
+<form class="rib" (ngSubmit)="addUser()">
+  <h2>הרשמה</h2>
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="Name" placeholder="שם" name="Name"
+         #inp1="ngModel" [(ngModel)]="this.userS.u.Name" required pattern="[א-ת ]{1,10}">
+        <label for="Name">שם</label>
+        <div *ngIf="inp1.invalid && (inp1.touched || inp1.dirty)">
+            <p *ngIf="inp1.errors!['required']">שדה חובה</p>
+            <p *ngIf="inp1.errors!['pattern']">חייב בעברית</p>
+        </div>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="Family" placeholder=" משפחה" name="Family"
+         #inp2="ngModel" [(ngModel)]="this.userS.u.Family" required pattern="[א-ת ]{10}">
+        <label for="Family">משפחה</label>
+        <div *ngIf="inp2.invalid && (inp2.touched || inp2.dirty)">
+            <p *ngIf="inp2.errors!['required']">שדה חובה</p>
+            <p *ngIf="inp2.errors!['pattern']">חייב בעברית</p>
+        </div>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="tel" class="form-control" id="Phone" placeholder="פלאפון" name="Phone"
+         #inp3="ngModel" [(ngModel)]="this.userS.u.Phone" required pattern="[0-9]{10}">
+        <label for="Phone">פלאפון</label>
+        <div *ngIf="inp3.invalid && (inp3.touched || inp3.dirty)">
+            <p *ngIf="inp3.errors!['required']">שדה חובה</p>
+            <p *ngIf="inp3.errors!['pattern']">מספר לא תקין</p>
+        </div>
+      </div>
+      <!--  -->
+      <div class="form-floating mb-3 mt-3"> 
+        <input type="Email" class="form-control" id="Email" placeholder="מייל" name="Email"
+         #inp4="ngModel" [(ngModel)]="this.userS.u.Email" required pattern="[A-Za-z@0-9]{}">
+        <label for="Email">מייל</label>
+        <div *ngIf="inp4.invalid && (inp4.touched || inp4.dirty)">
+            <p *ngIf="inp4.errors!['required']">שדה חובה</p>           
+            <p *ngIf="inp4.errors!['pattern']">מספר לא תקין</p>
+        </div>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="password" class="form-control" id="LoginPassword" placeholder="סיסמא" name="LoginPassword"
+         #inp5="ngModel" [(ngModel)]="this.userS.u.LoginPassword" required minlength="7">
+        <label for="LoginPassword">סיסמא</label>
+        <div *ngIf="inp5.invalid && (inp5.touched || inp5.dirty)">
+            <p *ngIf="inp5.errors!['required']">שדה חובה</p>
+            <p *ngIf="inp5.errors!['minlength']">סיסמא חלשה</p>
+        </div>
+      </div>
+    <div class="form-floating mb-3 mt-3">
+        <input type="checkbox"  id="FirstAidCertificate" placeholder="תעודת חובש" name="FirstAidCertificate"
+         #inp6="ngModel" [(ngModel)]="this.userS.u.FirstAidCertificate" required>
+        <label for="FirstAidCertificate"> תעודת חובש</label>
+        <div *ngIf="inp6.invalid && inp6.touched || inp6.dirty">
+            <p *ngIf="inp6.errors!['required']">שדה חובה</p>
+        </div>
+      </div>
+    <div class="submit"><button type="submit" class="btn btn-primary mb-2">שלח</button></div>
+    <button *ngIf="upd" (click)="deleteUser()">מחיקת משתמש</button>
+</form>

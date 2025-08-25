@@ -1,0 +1,21 @@
+<form class="rib" (ngSubmit)="getByMailPassword()">
+  <h2>התחברות</h2>
+    <div class="form-floating mb-3 mt-3">
+        <input type="email" class="form-control" id="email" placeholder="מייל" name="email"
+         #inp1="ngModel" [(ngModel)]="mail" required>
+        <label for="email">מייל</label>
+        <div *ngIf="inp1.invalid && (inp1.touched || inp1.dirty)">
+          <p *ngIf="inp1.errors!['required']">שדה חובה</p>           
+      </div>
+      </div>
+      
+      <div class="form-floating mt-3 mb-3">
+        <input type="password" class="form-control" id="pwd" placeholder="סיסמא" name="pswd" 
+        #inp2="ngModel" [(ngModel)]="password" required>
+        <label for="pwd">סיסמא</label>
+        <div *ngIf="inp2.invalid && (inp2.touched || inp2.dirty)">
+          <p *ngIf="inp2.errors!['required']">שדה חובה</p>
+      </div>
+    </div>
+    <div class="submit"><button type="submit" class="btn btn-primary mb-2">שלח</button></div>
+</form>

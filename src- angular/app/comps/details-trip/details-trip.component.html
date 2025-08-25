@@ -1,0 +1,51 @@
+<div class="b">
+<table class="table table-borderless">
+    <h1>{{tripS.chooseTrip.TripDestination}}</h1>
+    <tbody>
+      <tr>
+        <td>התקיים בתאריך:</td>
+        <td>{{tripS.chooseTrip.Date}}</td>
+      </tr>
+      <tr>
+        <td>משך זמן הטיול:</td>
+        <td>{{tripS.chooseTrip.TripDurationHours}}</td>
+      </tr>
+      <tr>
+        <td>מספר המקומות הפנויים:</td>
+        <td>{{tripS.chooseTrip.NumberOfAvailablePlaces}}</td>
+      </tr>
+      <tr>
+        <td>מחיר:</td>
+        <td>{{tripS.chooseTrip.Price}}</td>
+      </tr>
+      <tr>
+        <td>סוג:</td>
+        <td>{{tripS.chooseTrip.TypeName}}</td>
+      </tr>
+      <tr *ngIf="tripS.chooseTrip.FirstAidCertificate">
+        <td>חובש:</td>
+        <td>צריך</td>
+      </tr>
+      <tr *ngIf="!tripS.chooseTrip.FirstAidCertificate">
+        <td>חובש:</td>
+        <td>אין צורך</td>
+      </tr>
+      <tr></tr>
+    </tbody>
+    <button (click)="invateP()">הזמנת מקומות</button>
+  </table>    
+    <div *ngIf="f==true" class="invatePlace">
+        <form (ngSubmit)="checkInviteP()">
+            <button class="x"(click)="closeInvateP()">X</button>
+            <h4>כמה מקומות תרצה להזמין?</h4>
+            <input type="number" placeholder="מספר מקומות" name="numP"[(ngModel)]="n">
+            <input type="submit" value="אישור">
+        </form>   
+    </div>
+    <div class="carousel">
+      <button (click)="previousPhoto()"><</button>
+      <img src="{{imgL[i]}}" alt="Trip Photo">
+      <img src="{{imgL[i+1]}}" alt="Trip Photo">
+      <button (click)="nextPhoto()">></button>
+    </div>
+</div>

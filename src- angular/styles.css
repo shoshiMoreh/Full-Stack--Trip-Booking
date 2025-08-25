@@ -1,0 +1,8 @@
+body{
+    direction: rtl;
+    background-image: url('./assets/pic/jeremy-bishop-335002-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-attachment: fixed;
+    /* opacity: 0.1; */
+}

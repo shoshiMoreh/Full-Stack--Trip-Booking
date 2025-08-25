@@ -1,0 +1,12 @@
+.rib{
+    width: 400px;
+    margin: auto;
+    background-color: rgba(255,255,255, 0.5);
+    padding: 30px;
+}
+.submit{
+    direction: ltr;
+}
+input{
+    direction: rtl;
+}

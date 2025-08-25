@@ -1,0 +1,38 @@
+<div>
+<!-- <select id="type" name="type" (change)="this.filterL($any($event.target).value)">
+    <option>הכל</option>
+    <option *ngFor="let t of lTrip">{{t.TypeName}}</option>
+</select> -->
+<select id="date" name="date" (change)="this.filterDate($any($event.target).value)">
+    <option>עבר</option>
+    <option>עתיד</option>
+</select>
+<!-- <div class="b">
+<div  *ngFor="let b of FLbp" class="allT">
+<div>
+    <h2>{{b.TripDestination}}</h2>
+    <p>{{b.Date}}</p>
+    <p>{{b.NumberOfPlaces}}</p>
+    <button *ngIf="b.BookingDate!>d" (click)="deleteBP(b.BookingCode)">ביטול הזמנה</button>
+    
+</div>
+</div>
+</div>
+</div> -->
+<div class="b">
+    <div  *ngFor="let b of FLbp" class="allT">
+        <h1>{{b.TripDestination}}</h1>
+        <table class="table table-borderless">
+            
+            <tbody>
+              <tr>
+                <td>תאריך טיול:</td>
+                <td>{{b.Date}}</td>
+              </tr>
+              <!-- <tr>
+                <td>מספר מקומות:</td>
+                <td>{{b.NumberOfPlaces}}</td>
+              </tr> -->
+            </tbody>
+            <!-- <button *ngIf="b.Date!>d" (click)="deleteBP(b.BookingCode)">ביטול הזמנה</button> -->
+            <!-- *ngIf="b.Date!>d" -->

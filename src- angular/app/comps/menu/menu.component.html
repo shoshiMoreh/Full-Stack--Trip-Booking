@@ -1,0 +1,51 @@
+<div class="head"><p *ngIf="userS.u.UserCode">שלום {{userS.u.Name}}</p>
+  <p *ngIf="!userS.u.UserCode && !userS.manage">שלום אורח</p>
+  <p *ngIf="userS.manage && !userS.u.UserCode">מצב מנהל</p>
+  <img src="../assets/pic/logo1.png"></div>
+<div class="head">
+  <div> 
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./about']" routerLinkActive="active">אודות</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./signIn']" routerLinkActive="active">כניסה</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./logIn']" routerLinkActive="active">הרשמה</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./ourTrips']" routerLinkActive="active">לטיולים שלנו</a>
+      </li>
+      <!-- <li class="nav-item dropdown" aria-labelledby="navbarDropdown" *ngIf="userS.u.UserCode && !userS.manage">
+        <a class="nav-link dropdown-toggle" [routerLink]="['./personalArea']" routerLinkActive="active">איזור אישי</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['./updateDetails']" routerLinkActive="active">הפרטים שלי</a></li>
+          <li><a class="dropdown-item" [routerLink]="['./invatesUser']" routerLinkActive="active">ההזמנות שלי</a></li>
+        </ul>
+      </li> -->
+      <!-- <li class="nav-item" *ngIf="userS.u.UserCode && !userS.manage">
+        <a class="nav-link" [routerLink]="['./personalArea']" routerLinkActive="active">איזור אישי</a>
+      </li> -->
+      <!-- <ul class="dropdown-menu" *ngIf="userS.u.UserCode && !userS.manage">
+        <li><a class="dropdown-item" [routerLink]="['./updateDetails']" routerLinkActive="active">הפרטים שלי</a></li>
+        <li><a class="dropdown-item" [routerLink]="['./invatesUser']" routerLinkActive="active">ההזמנות שלי</a></li>
+      </ul> -->
+      <li class="nav-item" *ngIf="userS.u.UserCode">
+        <a class="nav-link" [routerLink]="['./updateDetails']" routerLinkActive="active">הפרטים שלי</a>
+      </li>
+      <li class="nav-item" *ngIf="userS.u.UserCode">
+        <a class="nav-link" [routerLink]="['./invatesUser']" routerLinkActive="active">ההזמנות שלי</a>
+      </li>
+      <li class="nav-item" *ngIf="userS.manage">
+        <a class="nav-link" [routerLink]="['./usUsers']" routerLinkActive="active">המשתמשים שלנו</a>
+      </li>
+    </ul>
+  </nav></div>
+  <div></div>
+</div>
+  <router-outlet></router-outlet>
+  
+  
+  

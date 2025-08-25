@@ -1,0 +1,42 @@
+<!-- <div class="b">
+    <div  *ngFor="let u of LUsers" class="allT">
+    <div>
+        <h2>{{u.Name}} {{u.Family}}</h2>
+        <p>{{u.Phone}}</p> 
+        <p>{{u.Email}}</p> 
+        <p>{{u.LoginPassword}}</p> 
+        <p>{{u.FirstAidCertificate}}</p> 
+    </div>
+    </div>
+    </div> -->
+
+<div class="b">
+    <div  *ngFor="let u of LUsers" class="allT">
+        <h1>{{u.Name}} {{u.Family}}</h1>
+        <table class="table table-borderless">
+            
+            <tbody>
+              <tr>
+                <td>פלאפון:</td>
+                <td>{{u.Phone}}</td>
+              </tr>
+              <tr>
+                <td>מייל:</td>
+                <td>{{u.Email}}</td>
+              </tr>
+              <tr>
+                <td>סיסמא:</td>
+                <td>{{u.LoginPassword}}</td>
+              </tr>
+              <tr *ngIf="u.FirstAidCertificate">
+                <td>תעודת חובש:</td>
+                <td>V</td>
+              </tr>
+              <tr *ngIf="!u.FirstAidCertificate">
+                <td>תעודת חובש:</td>
+                <td>X</td>
+              </tr>
+              <tr></tr>
+            </tbody>
+    <!-- </div>
+</div> -->

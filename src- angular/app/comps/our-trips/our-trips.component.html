@@ -1,0 +1,17 @@
+<div>
+<select id="type" name="type" (change)="this.filterL($any($event.target).value)">
+    <option>הכל</option>
+    <option *ngFor="let t of LTravelT">{{t.TypeName}}</option>
+</select>
+<div class="b">
+<div  *ngFor="let t of LFTrip" class="allT" >
+<div >
+    <img src="{{t.Photo}}">
+    <h2>{{t.TripDestination}}</h2>
+    <p>{{t.Date}}</p>
+    <button (click)="moreDetails(t)"> לחצו כדי לדעת עלי יותר</button>
+    
+</div>
+</div>
+</div>
+</div>
